@@ -1,0 +1,31 @@
+<?php
+
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL, "https://www.instamojo.com/api/1.1/payment-requests/");
+curl_setopt($ch, CURLOPT_HEADER, FALSE);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+curl_setopt($ch, CURLOPT_HTTPHEADER,
+            array("X-Api-Key:1ee78ebc9cba88dc803cc4b232678590",
+                  "X-Auth-Token:daeb76664a55e33d07a014958e019513"));
+$payload = Array(
+    'purpose' => 'FIFA 16',
+    'amount' => '10',
+    'phone' => '9999999999',
+    'buyer_name' => 'John Doe',
+    'redirect_url' => 'https://www.google.com/',
+    'send_email' => false,
+    'webhook' => 'http://www.example.com/webhook/',
+    'send_sms' => false,
+    'email' => '',
+    'allow_repeated_payments' => false
+);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
+$response = curl_exec($ch);
+curl_close($ch); 
+
+echo $response;
+
+?>

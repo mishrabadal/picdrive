@@ -1,0 +1,23 @@
+$(document).ready(
+    function()
+    {
+        $(".show-icon").click(
+            function()
+            {
+          if(password = $("#password").attr("type")=="password")
+          {
+            $("#password").attr("type","text");
+            $(".show-icon").css({
+                color:"red"
+            });
+          }
+         else{
+            $("#password").attr("type","password");
+            $(".show-icon").css({
+                color:"black"
+            });
+         }
+            }
+        );
+    }
+);

@@ -1,0 +1,33 @@
+.password-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+
+   
+}
+.password-box #password,.show-icon
+{
+    position: absolute;
+}
+.show-icon{
+    right:10px;
+    top:10px;
+    z-index: 1;
+    cursor: pointer;
+    color: black;
+}
+.email-box{
+    position: relative;
+   width: 100%;
+   height: 50px;
+}
+.email-box span, #email{
+    position: absolute;
+   
+   
+} 
+
+.email-box span{
+    right: 10px;
+    top:5px
+}
